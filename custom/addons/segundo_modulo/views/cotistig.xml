@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+
+<odoo>
+
+<record id="tipo_stig_sale_order" model="ir.ui.view">
+    <field name="name">tipo_stig_sale_order_form</field>
+    <field name ="model">sale.order</field>
+    <field name="inherit_id" ref="sale.view_order_form"/>
+    <field name="arch" type="xml">
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="terminos"/>
+            </xpath>
+    </field>
+</record>
+
+
+    <record id="vig_contrato_sale_order" model="ir.ui.view">
+    <field name="name">vig_contrato_sale_order_forrm</field>
+    <field name ="model">sale.order</field>
+    <field name="inherit_id" ref="sale.view_order_form"/>
+    <field name="arch" type="xml">
+            <xpath expr="//field[@name='terminos']" position="after">
+                <field name="vig_contrato"/>
+            </xpath>
+    </field>
+</record>
+
+<record id="iniciales_stig" model="ir.ui.view">
+    <field name="name">iniciales_stig</field>
+    <field name ="model">sale.order</field>
+    <field name="inherit_id" ref="sale.view_order_form"/>
+    <field name="arch" type="xml">
+            <xpath expr="//field[@name='vig_contrato']" position="after">
+                <field name="vendedor_ini"/>
+            </xpath>
+    </field>
+</record>
+
+
+
+</odoo>

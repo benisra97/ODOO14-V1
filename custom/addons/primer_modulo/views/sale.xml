@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+
+<odoo>
+
+ <record model="ir.ui.view" id="sale_comision_2">
+     <field name="name">sale.order.line.comision2</field>
+     <field name="model">sale.order</field>
+     <field name="inherit_id" ref="sale.view_quotation_tree"/>
+     <field name="arch" type="xml">
+        <xpath expr="//tree//field[@name='state']" position="after">
+             <field name="estado_pago" widget="badge" decoration-success="estado_pago == 'yes_paid'" decoration-info="estado_pago == 'not_paid'" />
+         </xpath>
+     </field>
+</record>
+
+<record model="ir.ui.view" id="id_cotizacion">
+     <field name="name">sale.order.line.comision3</field>
+     <field name="model">sale.order</field>
+     <field name="inherit_id" ref="sale.view_quotation_tree"/>
+     <field name="arch" type="xml">
+        <xpath expr="//tree//field[@name='name']" position="after">
+             <field name="id_cotizacion"/>
+         </xpath>
+     </field>
+</record>
+
+</odoo>

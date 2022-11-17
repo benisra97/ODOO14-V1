@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="modulo_action" model="ir.actions.act_window">
+        <field name="name">Reportes</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">tree,form</field>
+
+    </record>
+    <menuitem name="Mi modulo" id="comisiones_menu_menu"/>
+    <menuitem name="Comision" id="comisiones_menu" action="modulo_action"/>
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+       <record id="report_comision_semana" model="ir.actions.report">
+           <field name="name">Pago de comision por semana</field>
+           <field name="model">sale.order</field>
+           <field name="report_type">qweb-pdf</field>
+           <field name="report_name">primer_modulo.report_comisiones_semana</field>
+           <field name="report_file">primer_modulo.report_comisiones_semana</field>
+           <field name="binding_model_id" ref="sale.model_sale_order"/>
+           <field name="binding_type">report</field>
+       </record>
+    </data>
+</odoo>
+

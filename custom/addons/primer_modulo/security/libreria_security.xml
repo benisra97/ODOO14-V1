@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <record id="categoria_modulo_comisiones" model="ir.module.category">
+        <field name="name">Mi modulo</field>
+    </record>
+    <record id="mimodulo_group_user" model="res.groups">
+        <field name="name">Usuario</field>
+        <field name="category_id" ref="categoria_modulo_comisiones"/>
+        <field name="implied_ids" eval="[(4,ref('base.group_user'))]"/>
+
+    </record>
+
+
+</odoo>
