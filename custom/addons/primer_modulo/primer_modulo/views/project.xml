@@ -1,0 +1,166 @@
+<?xml version="1.0" ?>
+<odoo>
+
+     <record model="ir.ui.view" id="sale_margin_percent_2">
+     <field name="name">sale.order.line.tree.margin.view.form</field>
+     <field name="model">sale.order</field>
+     <field name="inherit_id" ref="sale.view_order_form"/>
+     <field name="arch" type="xml">
+         <xpath expr="//field[@name='order_line']/tree//field[@name='name']" position="after">
+             <field name="new_field"/>
+         </xpath>
+     </field>
+</record>
+
+         <record model="ir.ui.view" id="stotal_sd">
+     <field name="name">total_sd_sale_order</field>
+     <field name="model">sale.order</field>
+     <field name="inherit_id" ref="sale.view_order_form"/>
+     <field name="arch" type="xml">
+         <xpath expr="//field[@name='order_line']/tree//field[@name='price_unit']" position="after">
+             <field name="total_sd" />
+         </xpath>
+     </field>
+</record>
+
+    <record model="ir.ui.view" id="pu_cd_sale_order">
+     <field name="name">pu_cd_sale_order</field>
+     <field name="model">sale.order</field>
+     <field name="inherit_id" ref="sale.view_order_form"/>
+     <field name="arch" type="xml">
+         <xpath expr="//field[@name='order_line']/tree//field[@name='discount']" position="after">
+             <field name="pu_cd"/>
+         </xpath>
+     </field>
+</record>
+
+
+    <record model="ir.ui.view" id="utilidad_sale_order">
+     <field name="name">utilidad_sale_order</field>
+     <field name="model">sale.order</field>
+     <field name="inherit_id" ref="sale.view_order_form"/>
+     <field name="arch" type="xml">
+         <xpath expr="//field[@name='order_line']/tree//field[@name='pu_cd']" position="after">
+             <field name="utilidad_"/>
+         </xpath>
+     </field>
+</record>
+
+    <record model="ir.ui.view" id="cu_sale_order">
+     <field name="name">cu_sale_order</field>
+     <field name="model">sale.order</field>
+     <field name="inherit_id" ref="sale.view_order_form"/>
+     <field name="arch" type="xml">
+         <xpath expr="//field[@name='order_line']/tree//field[@name='price_unit']" position="before">
+             <field name="costo_unitario"/>
+         </xpath>
+     </field>
+</record>
+
+<record model="ir.ui.view" id="multi_cu_">
+     <field name="name">multi_sale_order</field>
+     <field name="model">sale.order</field>
+     <field name="inherit_id" ref="sale.view_order_form"/>
+     <field name="arch" type="xml">
+         <xpath expr="//field[@name='order_line']/tree//field[@name='costo_unitario']" position="after">
+             <field name="multi_pu"/>
+         </xpath>
+     </field>
+</record>
+
+    <record model="ir.ui.view" id="porcentaje_comision_sale_order">
+     <field name="name">porcentaje_comision_sale_order</field>
+     <field name="model">sale.order</field>
+     <field name="inherit_id" ref="sale.view_order_form"/>
+     <field name="arch" type="xml">
+         <xpath expr="//field[@name='order_line']/tree//field[@name='price_subtotal']" position="after">
+             <field name="porcentaje_comi"/>
+         </xpath>
+     </field>
+</record>
+
+
+    <record model="ir.ui.view" id="comision_sale_order">
+     <field name="name">comision_sale_order</field>
+     <field name="model">sale.order</field>
+     <field name="inherit_id" ref="sale.view_order_form"/>
+     <field name="arch" type="xml">
+         <xpath expr="//field[@name='order_line']/tree//field[@name='porcentaje_comi']" position="after">
+             <field name="comision"/>
+         </xpath>
+     </field>
+</record>
+
+    <record model="ir.ui.view" id="ejemplos">
+     <field name="name">ejemplos</field>
+     <field name="model">sale.order</field>
+     <field name="inherit_id" ref="sale.view_order_form"/>
+     <field name="arch" type="xml">
+         <xpath expr="//field[@name='order_line']/tree//field[@name='comision']" position="after">
+             <field name="discount_total"/>
+         </xpath>
+     </field>
+</record>
+
+
+
+<record id="view_tiempo_entr" model="ir.ui.view">
+    <field name="name">sale.order.entrega</field>
+    <field name ="model">sale.order</field>
+    <field name="inherit_id" ref="sale.view_order_form"/>
+    <field name="arch" type="xml">
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="entrega_tiempo"/>
+            </xpath>
+    </field>
+</record>
+
+ <record id="view_users_form_inherit" model="ir.ui.view">
+
+        <field name="name">res.users.form.inherit</field>
+        <field name="model">res.users</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+           <xpath expr="//field[@name='login']" position="after">
+                <field name="iniciales_user"/>
+            </xpath>
+        </field>
+    </record>
+
+
+<record id="iniciales" model="ir.ui.view">
+    <field name="name">iniciales</field>
+    <field name ="model">sale.order</field>
+    <field name="inherit_id" ref="sale.view_order_form"/>
+    <field name="arch" type="xml">
+            <xpath expr="//field[@name='entrega_tiempo']" position="after">
+                <field name="vendedor_ini"/>
+            </xpath>
+    </field>
+</record>
+
+
+<record id="id_coti" model="ir.ui.view">
+    <field name="name">id_coti_ventas</field>
+    <field name ="model">sale.order</field>
+    <field name="inherit_id" ref="sale.view_order_form"/>
+    <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="before">
+                <field name="id_cotizacion"/>
+            </xpath>
+    </field>
+</record>
+
+<record id="no_orden_" model="ir.ui.view">
+    <field name="name">no_orden_ventas</field>
+    <field name ="model">sale.order</field>
+    <field name="inherit_id" ref="sale.view_order_form"/>
+    <field name="arch" type="xml">
+            <xpath expr="//field[@name='id_cotizacion']" position="after">
+                <field name="no_orden"/>
+            </xpath>
+    </field>
+</record>
+
+</odoo>

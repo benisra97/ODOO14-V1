@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+       <template id="report_comisiones_semana">
+         <t t-call="web.html_container">
+          <t t-foreach="docs" t-as="o">
+            <t t-call="web.external_layout">
+              <div class="page">
+
+                   <t t-foreach="docs" t-as="o">
+                <p>
+
+                    <t t-set="latest_partner" t-value="o.run_sql()"/>
+
+                     <t t-foreach="latest_partner" t-as="part">
+                         <p> VENDEDOR : <span t-esc="part"/>  </p>
+                     </t>
+                 </p>
+     </t>
+
+
+
+              </div>
+            </t>
+          </t>
+         </t>
+       </template>
+    </data>
+</odoo>
